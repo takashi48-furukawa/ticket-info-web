@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>推しメン スケジュール</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { color: #d63384; }
+        li { margin-bottom: 15px; }
+        .event-title { font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>推しメン スケジュール一覧</h1>
+
+    <ul>
+    {% for e in events %}
+        <li>
+            <div class="event-title">{{ e.title }}</div>
+            開始: {{ e.start }}<br>
+            終了: {{ e.end }}<br>
+            場所: {{ e.location }}<br>
+            詳細: {{ e.description }}<br>
+            <a href="{{ e.source }}" target="_blank">情報元</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
